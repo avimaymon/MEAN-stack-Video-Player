@@ -1,4 +1,9 @@
 <div>
+
+<div>
+<iframe width="100%" height="400" target="_parent" [src]="video.url | safe" allowfullscreen >
+</iframe>
+</div>
   <form>
     <div *ngIf="editTitle" class="form-group">
       <input type="input" class="form-control" name="title" required placeholder="Title..." [(ngModel)]="video.title">
@@ -12,5 +17,7 @@
       <textarea class="form-control" name="description" rows="5" placeholder="Description..." [(ngModel)]="video.description"></textarea>
     </div>
     <h4 *ngIf="!editDesc" (click)="onDescClick()">{{video.description}}</h4>
+    <button type="button" (click)="updateVideo()" class="btn btn-primary">Update</button>
+    <button type="button" (click)="deleteVideo()" class="btn btn-danger">Delete</button>
   </form>
 </div>
