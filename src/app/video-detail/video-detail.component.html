@@ -1,0 +1,16 @@
+<div>
+  <form>
+    <div *ngIf="editTitle" class="form-group">
+      <input type="input" class="form-control" name="title" required placeholder="Title..." [(ngModel)]="video.title">
+    </div>
+    <h4 *ngIf="!editTitle" (click)="onTitleClick()">{{video.title}}</h4>
+    <div *ngIf="editUrl" class="form-group">
+      <input type="input" class="form-control" name="url" required placeholder="Url..." [(ngModel)]="video.url">
+    </div>
+    <h4 *ngIf="!editUrl" (click)="onUrlClick()">{{video.url}}</h4>
+    <div *ngIf="editDesc" class="form-group">
+      <textarea class="form-control" name="description" rows="5" placeholder="Description..." [(ngModel)]="video.description"></textarea>
+    </div>
+    <h4 *ngIf="!editDesc" (click)="onDescClick()">{{video.description}}</h4>
+  </form>
+</div>
